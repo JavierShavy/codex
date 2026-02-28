@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventario de Negocio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>APP de Inventario</h1>
+        <p>Controla tus productos con datos guardados en base de datos SQLite.</p>
+      </header>
+
+      <section class="card">
+        <h2>Agregar producto</h2>
+        <form id="product-form">
+          <div class="grid">
+            <label>
+              Nombre
+              <input id="name" required placeholder="Ej. Arroz 1kg" />
+            </label>
+            <label>
+              SKU
+              <input id="sku" required placeholder="Ej. ARZ-001" />
+            </label>
+            <label>
+              Precio (MXN)
+              <input id="price" type="number" min="0" step="0.01" required />
+            </label>
+            <label>
+              Cantidad
+              <input id="quantity" type="number" min="0" step="1" required />
+            </label>
+            <label>
+              Stock mínimo
+              <input id="minStock" type="number" min="0" step="1" required />
+            </label>
+          </div>
+          <button type="submit">Guardar producto</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="table-header">
+          <h2>Inventario</h2>
+          <input id="search" placeholder="Buscar por nombre o SKU..." />
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>SKU</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Mínimo</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="inventory-body"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <template id="row-template">
+      <tr>
+        <td class="name"></td>
+        <td class="sku"></td>
+        <td class="price"></td>
+        <td class="quantity"></td>
+        <td class="min-stock"></td>
+        <td class="status"></td>
+        <td>
+          <button class="secondary adjust">Ajustar</button>
+          <button class="danger delete">Eliminar</button>
+        </td>
+      </tr>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>

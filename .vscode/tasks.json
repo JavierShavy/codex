@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run inventory server",
+      "type": "shell",
+      "command": "python3 server.py",
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Check Python syntax",
+      "type": "shell",
+      "command": "python3 -m py_compile server.py",
+      "problemMatcher": []
+    },
+    {
+      "label": "Check frontend syntax",
+      "type": "shell",
+      "command": "node --check app.js",
+      "problemMatcher": []
+    }
+  ]
+}
