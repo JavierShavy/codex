@@ -1,4 +1,4 @@
-const form = document.getElementById('product-form');
+﻿const form = document.getElementById('product-form');
 const searchInput = document.getElementById('search');
 const tbody = document.getElementById('inventory-body');
 const template = document.getElementById('row-template');
@@ -6,7 +6,7 @@ const template = document.getElementById('row-template');
 let products = [];
 
 function formatCurrency(value) {
-  return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(value);
+  return new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(value);
 }
 
 function stockStatus(item) {
@@ -118,3 +118,5 @@ form.addEventListener('submit', async (event) => {
 searchInput.addEventListener('input', refresh);
 
 refresh();
+
+
